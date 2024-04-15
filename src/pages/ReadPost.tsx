@@ -4,7 +4,7 @@ import { fetchPost } from '../api/posts';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Box ,Button, Typography} from '@mui/material';
 
-const Post: React.FC = () => {
+const ReadPost: React.FC = () => {
   const navigate = useNavigate();
   const { id } = useParams();
   const { isLoading, isError, data: post, error } = useQuery({
@@ -23,4 +23,4 @@ const Post: React.FC = () => {
     </Box>
   )
 }
-export default Post;
+export default ReadPost;

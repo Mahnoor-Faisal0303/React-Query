@@ -1,19 +1,19 @@
-import React, { useEffect, useState } from 'react';
-import axios from "axios";
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import PostList from './pages/PostList';
-import Post from './pages/Post';
+import ReadPost from './pages/ReadPost';
 import EditPost from './pages/EditPost';
 import { Typography,Box } from '@mui/material';
+import APP_ROUTES from './constants/Routes';
 
 const App: React.FC = () => {
   return (
     <Box display="flex" flexDirection="column" alignItems="center">
       <Typography variant="h3">Crud operations in React Query</Typography>
       <Routes>
-        <Route path="/" element={<PostList />} />
-        <Route path="/post/:id" element={<Post />} />
-        <Route path="/post/:id/edit" element={<EditPost />} />
+        <Route path={APP_ROUTES.HOME_PAGE} element={<PostList />} />
+        <Route path={APP_ROUTES.POST_PAGE} element={<ReadPost />} />
+        <Route path={APP_ROUTES.EDIT_PAGE} element={<EditPost />} />
       </Routes>   
     </Box>
   );

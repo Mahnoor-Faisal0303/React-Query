@@ -26,7 +26,7 @@ const PostForm: React.FC<PostFormProps> = ({ onSubmit, initialValue }) => {
 
   const renderField = (label: string) => (
     <Box key={label}  sx={{alignItems:"center"}}>
-      <TextField id="outlined-basic" label={label} variant="outlined" onChange={handleChangeInput} type="text" name={label.toLowerCase()} value={post[label.toLowerCase() as keyof Post]} />
+      <TextField id="outlined-basic" label={label} variant="outlined" onChange={handleChangeInput} type="text" name={label.toLowerCase()} value={post[label.toLowerCase()]} />
     </Box>
   );
   

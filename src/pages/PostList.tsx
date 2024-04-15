@@ -6,6 +6,7 @@ import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { deletePost, fetchPosts } from '../api/posts';
 import { useMatch, useNavigate } from 'react-router-dom';
 import { Box, Button, Typography } from '@mui/material';
+import APP_ROUTES from '../constants/Routes';
 
 const PostList: React.FC = () => {
 
@@ -20,16 +21,16 @@ const PostList: React.FC = () => {
     if (isLoading) return 'Loading...';
     if (isError) return `Error: ${error.message}`
 
-    // const deletePostMutation = useMutation({
-    //     mutationFn: deletePost,
-    //     onSuccess: () => {
-    //         queryClient.invalidateQueries({ queryKey: ['post']});
-    //       }
-    // });
+    const deletePostMutation = useMutation({
+        mutationFn: deletePost,
+        onSuccess: () => {
+            queryClient.invalidateQueries({ queryKey: ['post']});
+          }
+    });
 
-    // const handleDelete=(id: any)=>{
-    //     deletePostMutation.mutate(id);
-    // }
+    const handleDelete=(id: any)=>{
+        deletePostMutation.mutate(id);
+    }
 
     return (
         <Box sx={{ width: "100%" }}>
@@ -38,11 +39,10 @@ const PostList: React.FC = () => {
                 {posts.map((post: { id: React.Key | null | undefined; title: string | number | boolean | React.ReactElement<any, string | React.JSXElementConstructor<any>> | Iterable<React.ReactNode> | React.ReactPortal | null | undefined; }) => (
                     <Box key={post.id} sx={{background: "lightgray",m:4 ,p:1}}>
                         <Box>
-                            <Typography sx={{ cursor: "pointer" }} variant="h4" onClick={() => navigate(`/post/${post.id}`)}>{post.title}</Typography>
-                            <Button variant="contained" onClick={() => navigate(`/post/${post.id}/edit`)}>Edit</Button>
-                            <Button variant="contained" sx={{ml:3}}>Delete</Button>
-                            {/* <button onClick={()=> handleDelete(post.id)}>Delete</button> */}
-                        </Box>
+                            <Typography sx={{ cursor: "pointer" }} variant="h4" onClick={() => navigate(APP_ROUTES.POST_PAGE.replace(":id", `${post.id}`))}>{post.title}</Typography>
+                            <Button variant="contained" onClick={() => navigate(APP_ROUTES.EDIT_PAGE.replace(":id", `${post.id}`))}>Edit</Button>
+                            <Button variant="contained" sx={{ml:3}} onClick={()=> handleDelete(post.id)}>Delete</Button>
+                        </Box> 
                     </Box>
                 ))}
             </Box>

@@ -3,6 +3,7 @@ import PostForm from '../components/PostForm';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
 import { fetchPost, updatePost } from '../api/posts';
+import APP_ROUTES from '../constants/Routes';
 
 const EditPost: React.FC = () => {
   const queryClient = useQueryClient();
@@ -17,7 +18,7 @@ const EditPost: React.FC = () => {
     mutationFn: updatePost,
     onSuccess: () => {
       queryClient.invalidateQueries({ queryKey: ['post']});
-      navigate("/");
+      navigate(APP_ROUTES.HOME_PAGE);
     }
   })
 

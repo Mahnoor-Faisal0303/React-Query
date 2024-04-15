@@ -1,24 +1,19 @@
 {
   "posts": [
     {
-      "id": "f57a9392-dd42-4d2e-8292-4c4ef3ac6d03",
-      "title": "React.js",
-      "body": "i am react "
-    },
-    {
-      "id": "42e071d6-f05b-4e0f-b078-29f731cdbe20",
+      "id": "4ca356c9-d087-4e3e-9be0-1c4752ceb47a",
       "title": "Title 1",
       "body": "body 1"
     },
     {
-      "id": "8b7c09af-d3a1-41be-a6ab-39b91bd3c266",
-      "title": "This is title",
-      "body": "this is the body "
+      "id": "c39b1d24-060f-41cb-8c1b-685977871236",
+      "title": "Title2",
+      "body": "body2"
     },
     {
-      "id": "65be38ae-5838-425c-9d83-8cdba3cf6a20",
-      "title": "React Query",
-      "body": "https://www.npmjs.com/package/react-query"
+      "id": "aa1b35ad-5334-4e1d-b444-6a1e3ae88710",
+      "title": "TITLE 3",
+      "body": "BODY 3"
     }
   ]
 }
