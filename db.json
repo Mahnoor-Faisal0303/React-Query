@@ -1,13 +1,8 @@
 {
   "posts": [
     {
-      "id": "4ca356c9-d087-4e3e-9be0-1c4752ceb47a",
-      "title": "Title 1",
-      "body": "body 1"
-    },
-    {
       "id": "c39b1d24-060f-41cb-8c1b-685977871236",
-      "title": "Title2",
+      "title": "Title1",
       "body": "body2"
     },
     {
