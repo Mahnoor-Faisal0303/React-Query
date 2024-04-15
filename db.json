@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": "f57a9392-dd42-4d2e-8292-4c4ef3ac6d03",
+      "title": "React.js",
+      "body": "i am react "
+    },
+    {
+      "id": "42e071d6-f05b-4e0f-b078-29f731cdbe20",
+      "title": "Title 1",
+      "body": "body 1"
+    },
+    {
+      "id": "8b7c09af-d3a1-41be-a6ab-39b91bd3c266",
+      "title": "This is title",
+      "body": "this is the body "
+    },
+    {
+      "id": "65be38ae-5838-425c-9d83-8cdba3cf6a20",
+      "title": "React Query",
+      "body": "https://www.npmjs.com/package/react-query"
+    }
+  ]
+}
